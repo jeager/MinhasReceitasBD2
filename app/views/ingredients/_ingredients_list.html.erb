@@ -1,0 +1,17 @@
+<h1>Ingredients</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% recipes_ingredients.each do |ingredient| %>
+    <tr>
+      <td><%= link_to ingredient.ingredient.name, ingredient_path(ingredient) %></td>
+      <td><%= ingredient.quantity %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

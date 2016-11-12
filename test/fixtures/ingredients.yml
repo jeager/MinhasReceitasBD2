@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: 1
+  name: MyString
+  measure: MyString
+  fabrication_date: 2016-11-12
+  expire_in: 2016-11-12
+  description: MyString
+  recipe_id: 
+
+two:
+  quantity: 1
+  name: MyString
+  measure: MyString
+  fabrication_date: 2016-11-12
+  expire_in: 2016-11-12
+  description: MyString
+  recipe_id: 

@@ -1,0 +1,11 @@
+<div class='nested-fields'>
+	<%= f.label :quantity, :class => 'control-label col-lg-2' %>
+	<div class="col-lg-10">
+		<%= f.number_field :quantity, class: 'form-control' %>
+	</div>
+	<%= f.label :ingredient_id, :class => 'control-label col-lg-2' %>
+	<div class="col-lg-10">
+		<%= f.select :ingredient_id, Ingredient.pluck(:name,:id), {}, class: 'form-control' %>
+	</div>
+	<%= link_to_remove_association "remove ingredient", f, class: 'control-label col-lg-12' %>
+</div>

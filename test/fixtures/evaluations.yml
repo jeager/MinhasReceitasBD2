@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  taster_id: 
+  recipe_id: 
+  grade: 1
+  evaluation_date: 2016-11-12
+  comments: MyString
+
+two:
+  taster_id: 
+  recipe_id: 
+  grade: 1
+  evaluation_date: 2016-11-12
+  comments: MyString

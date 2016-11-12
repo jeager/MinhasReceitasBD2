@@ -1,0 +1,1 @@
+json.partial! "tasters/taster", taster: @taster

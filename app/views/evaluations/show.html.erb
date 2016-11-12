@@ -1,0 +1,27 @@
+<%- model_class = Evaluation -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:taster_id) %>:</strong></dt>
+  <dd><%= @evaluation.taster_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:recipe_id) %>:</strong></dt>
+  <dd><%= @evaluation.recipe_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:grade) %>:</strong></dt>
+  <dd><%= @evaluation.grade %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:evaluation_date) %>:</strong></dt>
+  <dd><%= @evaluation.evaluation_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:comments) %>:</strong></dt>
+  <dd><%= @evaluation.comments %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              evaluations_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_evaluation_path(@evaluation), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              evaluation_path(@evaluation),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

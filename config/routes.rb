@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+
+  get 'home/index'
+  root 'home#index'
+
+  resources :books
+  resources :editors
+  resources :steps
+  resources :evaluations
+  resources :restaurants
+  resources :chefs
+  resources :tasters
+  resources :employees
+  resources :addresses
+  resources :districts
+  resources :cities
+  resources :ufs
+  resources :ingredients
+  resources :recipes
+  resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

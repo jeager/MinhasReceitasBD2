@@ -1,0 +1,17 @@
+<h1>Recipes</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Portions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% recipes.each do |recipe| %>
+    <tr>
+      <td><%= link_to recipe.title, recipe_path(recipe) %></td>
+      <td><%= recipe.portions %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
