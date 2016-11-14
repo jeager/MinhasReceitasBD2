@@ -22,6 +22,15 @@
     </div>
     <%=f.error_span(:title) %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :chef_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :chef_id, Employee.all.collect{ |p| [ p.name, p.chef.id ] }, {}, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:title) %>
+  </div>
+
   <div class="form-group">
     <%= f.label :portions, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">

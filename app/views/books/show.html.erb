@@ -7,7 +7,7 @@
   <dt><strong><%= model_class.human_attribute_name(:isbn) %>:</strong></dt>
   <dd><%= @book.isbn %></dd>
   <dt><strong><%= model_class.human_attribute_name(:editor_id) %>:</strong></dt>
-  <dd><%= @book.editor_id %></dd>
+  <dd><%= @book.editor.name %></dd>
 </dl>
 
 <%= render partial: 'recipes/recipes_list', locals:{recipes: @book.recipes}%>

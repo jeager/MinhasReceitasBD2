@@ -18,11 +18,6 @@ ActiveRecord::Schema.define(version: 20161112213820) do
     t.integer "recipe_id", null: false
   end
 
-  create_table "Chefs_Recipes", id: false, force: :cascade do |t|
-    t.integer "recipe_id", null: false
-    t.integer "chef_id",   null: false
-  end
-
   create_table "Chefs_Restaurants", id: false, force: :cascade do |t|
     t.integer "chef_id",       null: false
     t.integer "restaurant_id", null: false
@@ -103,13 +98,13 @@ ActiveRecord::Schema.define(version: 20161112213820) do
     t.integer  "enrollment"
     t.string   "sex"
     t.float    "salary"
-    t.integer  "cpf"
+    t.integer  "cpf",           limit: 8
     t.string   "nationality"
     t.string   "scholarity"
     t.string   "father_name"
     t.string   "mother_name"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "employee_type"
   end
 
@@ -142,9 +137,11 @@ ActiveRecord::Schema.define(version: 20161112213820) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "category_id"
+    t.integer  "chef_id"
   end
 
   add_index "recipes", ["category_id"], name: "index_recipes_on_category_id"
+  add_index "recipes", ["chef_id"], name: "index_recipes_on_chef_id"
 
   create_table "recipes_ingredients", force: :cascade do |t|
     t.integer  "recipe_id"

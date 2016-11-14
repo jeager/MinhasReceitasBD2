@@ -5,8 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:employee_id) %></th>
+      <th>Name</th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -14,10 +13,10 @@
   <tbody>
     <% @chefs.each do |chef| %>
       <tr>
-        <td><%= link_to chef.id, chef_path(chef) %></td>
-        <td><%= chef.employee_id %></td>
+        <td><%= link_to chef.employee.name, chef_path(chef) %></td>
         <td><%=l chef.created_at %></td>
         <td>
+          
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_chef_path(chef), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

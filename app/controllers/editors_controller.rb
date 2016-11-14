@@ -69,6 +69,6 @@ class EditorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def editor_params
-    params.require(:editor).permit(:name, :cnpj, addresses_attributes: [:id, :street, :number, :complement, :cep, :district_id, :address_type])
+    params.require(:editor).permit(:name, :cnpj, addresses_attributes: [:id, :street, :number, :complement, :cep, :district_id, :address_type, :uf_id, district_attributes: [:id,:name, :city_id]])
     end
 end

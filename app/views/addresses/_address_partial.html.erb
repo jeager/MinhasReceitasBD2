@@ -34,13 +34,25 @@
   </div>
   <%=ff.error_span(:district_id) %>
 </div>
-<div class="form-group">
-  <%= ff.label :district_id, :class => 'control-label col-lg-2' %>
-  <div class="col-lg-10">
-    <%= ff.select :district_id, District.pluck(:name,:id), {}, class: 'form-control' %>
+<%= ff.fields_for :district, District.new do |fff| %>
+  <div class="form-group">
+    <%= fff.label :name, 'District', :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= fff.text_field :name, :class => 'form-control' %>
+    </div>
+    <%=fff.error_span(:name) %>
   </div>
-  <%=ff.error_span(:district_id) %>
-</div>
+
+  <div class="form-group">
+    <%= fff.label :city_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= fff.select :city_id, City.pluck(:name,:id), {}, class: 'form-control' %>
+    </div>
+    <%=fff.error_span(:city_id) %>
+  </div>
+
+<%end%>
+
 <div class="form-group">
   <%= ff.label :address_type, :class => 'control-label col-lg-2' %>
   <div class="col-lg-10">

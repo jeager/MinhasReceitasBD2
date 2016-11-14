@@ -3,8 +3,7 @@ class CreateIngredients < ActiveRecord::Migration
     create_table :ingredients do |t|
       t.string :name
       t.string :measure
-      t.date :fabrication_date
-      t.date :expire_in
+      t.integer :expire_in
       t.string :description
 
       t.timestamps null: false

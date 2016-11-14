@@ -1,19 +1,35 @@
-<%- model_class = Chef -%>
+<%- model_class = Employee -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:employee_id) %>:</strong></dt>
-  <dd><%= @chef.employee_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @chef.employee.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rg) %>:</strong></dt>
+  <dd><%= @chef.employee.rg %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:enrollment) %>:</strong></dt>
+  <dd><%= @chef.employee.enrollment %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sex) %>:</strong></dt>
+  <dd><%= @chef.employee.sex %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:salary) %>:</strong></dt>
+  <dd><%= @chef.employee.salary %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cpf) %>:</strong></dt>
+  <dd><%= @chef.employee.cpf %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nationality) %>:</strong></dt>
+  <dd><%= @chef.employee.nationality %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:scholarity) %>:</strong></dt>
+  <dd><%= @chef.employee.scholarity %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:father_name) %>:</strong></dt>
+  <dd><%= @chef.employee.father_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mother_name) %>:</strong></dt>
+  <dd><%= @chef.employee.mother_name %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              chefs_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_chef_path(@chef), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              chef_path(@chef),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+<h2> Top Ingredients </h2>
+<dl class="dl-horizontal">
+<% @chef.most_used_ingredients.each do |i| %>
+	<dt><strong><%= Ingredient.find_by_id(i[0]).name %>:</strong></dt>
+	<dd><%= i[1] %></dd>
+<%end%>
+</div>

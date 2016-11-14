@@ -30,16 +30,9 @@
     <%=f.error_span(:measure) %>
   </div>
   <div class="form-group">
-    <%= f.label :fabrication_date, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :fabrication_date, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:fabrication_date) %>
-  </div>
-  <div class="form-group">
     <%= f.label :expire_in, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :expire_in, :class => 'form-control' %>
+      <%= f.number_field :expire_in, :class => 'form-control', placeholder: 'Dias' %>
     </div>
     <%=f.error_span(:expire_in) %>
   </div>

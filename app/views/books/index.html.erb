@@ -8,6 +8,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:isbn) %></th>
       <th><%= model_class.human_attribute_name(:editor_id) %></th>
+      <th>Number Recipes</th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -17,7 +18,8 @@
       <tr>
         <td><%= link_to book.id, book_path(book) %></td>
         <td><%= book.isbn %></td>
-        <td><%= book.editor_id %></td>
+        <td><%= book.editor.name %></td>
+        <td><%= book.recipes.count %></td>
         <td><%=l book.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

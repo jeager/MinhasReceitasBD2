@@ -8,7 +8,6 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:measure) %></th>
-      <th><%= model_class.human_attribute_name(:fabrication_date) %></th>
       <th><%= model_class.human_attribute_name(:expire_in) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -21,7 +20,6 @@
         <td><%= link_to ingredient.id, ingredient_path(ingredient) %></td>
         <td><%= ingredient.name %></td>
         <td><%= ingredient.measure %></td>
-        <td><%= ingredient.fabrication_date %></td>
         <td><%= ingredient.expire_in %></td>
         <td><%= ingredient.description %></td>
         <td><%=l ingredient.created_at %></td>

@@ -4,6 +4,7 @@
     <tr>
       <th>Title</th>
       <th>Portions</th>
+      <th>Chef</th>
     </tr>
   </thead>
   <tbody>
@@ -11,6 +12,7 @@
     <tr>
       <td><%= link_to recipe.title, recipe_path(recipe) %></td>
       <td><%= recipe.portions %></td>
+      <td><%= recipe.chef.employee.name %></td>
     </tr>
     <% end %>
   </tbody>

@@ -1,6 +1,6 @@
 class Employee < ActiveRecord::Base
-	has_many :tasters
-	has_many :chefs
+	has_one :taster
+	has_one :chef
 	has_many :addresses
 
 	accepts_nested_attributes_for :addresses

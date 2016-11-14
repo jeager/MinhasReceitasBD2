@@ -1,4 +1,5 @@
 <%- model_class = Editor -%>
+<%- model_class_2 = Address -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
@@ -8,6 +9,21 @@
   <dd><%= @editor.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:cnpj) %>:</strong></dt>
   <dd><%= @editor.cnpj %></dd>
+  <h4 align="center"> Address </h4>
+  <dt><strong><%= model_class_2.human_attribute_name(:street) %>:</strong></dt>
+  <dd><%= @editor.addresses.first.street %></dd>
+  <dt><strong><%= model_class_2.human_attribute_name(:number) %>:</strong></dt>
+  <dd><%= @editor.addresses.first.number %></dd>
+  <dt><strong><%= model_class_2.human_attribute_name(:complement) %>:</strong></dt>
+  <dd><%= @editor.addresses.first.complement %></dd>
+  <dt><strong><%= model_class_2.human_attribute_name(:cep) %>:</strong></dt>
+  <dd><%= @editor.addresses.first.cep %></dd>
+  <dt><strong>City:</strong></dt>
+  <dd><%= @editor.addresses.first.district.city.name %></dd>
+  <dt><strong><%= model_class_2.human_attribute_name(:district_id) %>:</strong></dt>
+  <dd><%= @editor.addresses.first.district.name %></dd>
+  <dt><strong><%= model_class_2.human_attribute_name(:type) %>:</strong></dt>
+  <dd><%= @editor.addresses.first.address_type %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

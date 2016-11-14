@@ -6,7 +6,7 @@ class CreateEmployees < ActiveRecord::Migration
       t.integer :enrollment
       t.string :sex
       t.float :salary
-      t.integer :cpf
+      t.bigint :cpf
       t.string :nationality
       t.string :scholarity
       t.string :father_name

@@ -10,7 +10,7 @@
     <% recipes_ingredients.each do |ingredient| %>
     <tr>
       <td><%= link_to ingredient.ingredient.name, ingredient_path(ingredient) %></td>
-      <td><%= ingredient.quantity %></td>
+      <td><%= ingredient.quantity %> <%=ingredient.ingredient.measure%></td>
     </tr>
     <% end %>
   </tbody>
