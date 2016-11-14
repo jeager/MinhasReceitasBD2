@@ -26,6 +26,8 @@
   <dd><%= @chef.employee.mother_name %></dd>
 </dl>
 
+<%= render partial: 'recipes/recipes_list', locals: {recipes: @chef.recipes} %>
+
 <h2> Top Ingredients </h2>
 <dl class="dl-horizontal">
 <% @chef.most_used_ingredients.each do |i| %>
